@@ -95,7 +95,7 @@ client.on('message', msg => {
           `TEL;type=CELL;type=VOICE;waid=${CelNumberFormatter}:${CelNumberFormatter}\n` +
           'END:VCARD';
 
-        const number = NumObi;
+        const number = phoneNumberFormatter('529991739233');
         const message = msg.body;
 
         client.sendMessage(number, message).then(response => {
@@ -112,7 +112,7 @@ client.on('message', msg => {
 
         console.log(msg);
 
-        number = NumOz;  
+        number = phoneNumberFormatter('529992612798');  
 
         client.sendMessage(number, message).then(response => {
           console.log('Se envio a Oz');
