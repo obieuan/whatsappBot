@@ -97,9 +97,9 @@ client.on('message', msg => {
 
         const message = msg.body;
         const numberObi = phoneNumberFormatter('5219991739233');
-        const numberOz = phoneNumberFormatter('5219991739233');
-        const numberFelipe = phoneNumberFormatter('5219991739233');
-        const numberSosa = phoneNumberFormatter('5219991739233');
+        const numberOz = phoneNumberFormatter('529992612798');     // 529992612798
+        const numberFelipe = phoneNumberFormatter('529991939429'); // 529991939429
+        const numberSosa = phoneNumberFormatter('529991537331');   // 529991537331
 
                       // Enviar a Obi
               client.sendMessage(numberObi, message).then(response => {
