@@ -16,6 +16,12 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
 
+const NumObi = phoneNumberFormatter('529991739233');
+const NumOz  = phoneNumberFormatter('529992612798');
+//const NumFel = phoneNumberFormatter('529991739233');
+//const NumSos = phoneNumberFormatter('529991739233');
+//const NumHil = phoneNumberFormatter('529991739233');
+
 app.use(express.json());
 app.use(express.urlencoded({
   extended: true
@@ -89,19 +95,35 @@ client.on('message', msg => {
           `TEL;type=CELL;type=VOICE;waid=${CelNumberFormatter}:${CelNumberFormatter}\n` +
           'END:VCARD';
 
-        const number = phoneNumberFormatter('5219991739233');
+        const number = NumObi;
         const message = msg.body;
 
         client.sendMessage(number, message).then(response => {
-          console.log('Se envio a ObiEuan');
+          console.log('Se envio a Obi');
         }).catch(err => {
-          console.log('No se envio a ObiEuan');
+          console.log('No se envio a Obi');
         });
 
         client.sendMessage(number, messageVCard).then(response => {
-          console.log('Se envio a ObiEuan');
+          console.log('Se envio a Obi');
         }).catch(err => {
-          console.log('No se envio a ObiEuan');
+          console.log('No se envio a Obi');
+        });
+
+        console.log(msg);
+
+        number = NumOz;  
+
+        client.sendMessage(number, message).then(response => {
+          console.log('Se envio a Oz');
+        }).catch(err => {
+          console.log('No se envio a Oz');
+        });
+
+        client.sendMessage(number, messageVCard).then(response => {
+          console.log('Se envio a Obi');
+        }).catch(err => {
+          console.log('No se envio a Obi');
         });
 
         console.log(msg);
@@ -120,7 +142,7 @@ client.on('message', msg => {
 
           //Redes sociales
         case '2':
-            msg.reply('Nuestras redes sociales son las siguientes: \n1.- Facebook: https://facebook.com/ \n2.- Instagram: https://instagram.com');
+            msg.reply('Nuestras redes sociales son las siguientes: \n1.- Facebook: https://www.facebook.com/cervezaartesanalmerida \n2.- Instagram: https://www.instagram.com/cerveza.lupnaticos/');
           break;
 
           //Opción 1.1 - Enviar recordatorio a los vendedores.
