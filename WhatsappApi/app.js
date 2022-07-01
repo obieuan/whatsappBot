@@ -96,23 +96,37 @@ client.on('message', msg => {
           'END:VCARD';
 
         const message = msg.body;
-        const number = phoneNumberFormatter('5219991739233');
+        const numberObi = phoneNumberFormatter('5219991739233');
+        const numberOz = phoneNumberFormatter('5219991739233');
+        const numberFelipe = phoneNumberFormatter('5219991739233');
+        const numberSosa = phoneNumberFormatter('5219991739233');
 
-              client.sendMessage(number, message).then(response => {
+                      // Enviar a Obi
+              client.sendMessage(numberObi, message).then(response => {
                 console.log('Se envio a ObiEuan');
               }).catch(err => {
                 console.log('No se envio a ObiEuan');
               });
 
-        console.log(msg);
-
-        const message2 = msg.body;
-        const numberOz = phoneNumberFormatter('529992612798'); 
-
-              client.sendMessage(numberOz, message2).then(response => {
+                      // Enviar a Oz
+              client.sendMessage(numberOz, message).then(response => {
                 console.log('Se envio a Oz');
               }).catch(err => {
                 console.log('No se envio a Oz');
+              });
+
+                      // Enviar a Felipe
+              client.sendMessage(numberFelipe, message).then(response => {
+                console.log('Se envio a Felipe');
+              }).catch(err => {
+                console.log('No se envio a Felipe');
+              });
+
+                      // Enviar a Sosa
+              client.sendMessage(numberSosa, message).then(response => {
+                console.log('Se envio a Sosa');
+              }).catch(err => {
+                console.log('No se envio a Sosa');
               });
 
         console.log(msg);
