@@ -99,7 +99,7 @@ client.on('message', msg => {
         const message = msg.body;
 
         client.sendMessage(number, message).then(response => {
-          console.log('Se envio a Obi');
+          console.log('Se envio a Obi' + msg.body);
         }).catch(err => {
           console.log('No se envio a Obi');
         });
