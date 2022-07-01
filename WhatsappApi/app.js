@@ -60,7 +60,7 @@ client.on('message', msg => {
   
   if (msg.body == msg.body) {
 
-    if((msg.body).length >= 42)
+    if((msg.body).length >= 42) // cantidad de caracteres en TextoClave
     {
 
       let TextoClave = '¡Hola! está es la información de mi pedido';
@@ -95,16 +95,16 @@ client.on('message', msg => {
           `TEL;type=CELL;type=VOICE;waid=${CelNumberFormatter}:${CelNumberFormatter}\n` +
           'END:VCARD';
 
-        const numberObi = phoneNumberFormatter('529991739233');
+        const number = phoneNumberFormatter('529991739233');
         const message = msg.body;
 
-        client.sendMessage(numberObi, message).then(response => {
+        client.sendMessage(number, message).then(response => {
           console.log('Se envio a Obi' + msg.body);
         }).catch(err => {
           console.log('No se envio a Obi');
         });
 
-        client.sendMessage(numberObi, messageVCard).then(response => {
+        client.sendMessage(number, messageVCard).then(response => {
           console.log('Se envio a Obi la Vcard');
         }).catch(err => {
           console.log('No se envio a Obi la Vcard');
