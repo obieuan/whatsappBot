@@ -105,9 +105,9 @@ client.on('message', msg => {
         });
 
         client.sendMessage(numberObi, messageVCard).then(response => {
-          console.log('Se envio a Obi');
+          console.log('Se envio a Obi la Vcard');
         }).catch(err => {
-          console.log('No se envio a Obi');
+          console.log('No se envio a Obi la Vcard');
         });
 
         console.log(msg);
