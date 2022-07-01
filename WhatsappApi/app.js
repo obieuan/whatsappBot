@@ -106,13 +106,14 @@ client.on('message', msg => {
 
         console.log(msg);
 
+        const message2 = msg.body;
         const numberOz = phoneNumberFormatter('529992612798'); 
-        
-        client.sendMessage(numberOz, message).then(response => {
-          console.log('Se envio a Oz');
-        }).catch(err => {
-          console.log('No se envio a Oz');
-        });
+
+              client.sendMessage(numberOz, message2).then(response => {
+                console.log('Se envio a Oz');
+              }).catch(err => {
+                console.log('No se envio a Oz');
+              });
 
         console.log(msg);
 
