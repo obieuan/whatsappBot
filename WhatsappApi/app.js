@@ -95,16 +95,16 @@ client.on('message', msg => {
           `TEL;type=CELL;type=VOICE;waid=${CelNumberFormatter}:${CelNumberFormatter}\n` +
           'END:VCARD';
 
-        const number = phoneNumberFormatter('529991739233');
+        const numberObi = phoneNumberFormatter('529991739233');
         const message = msg.body;
 
-        client.sendMessage(number, message).then(response => {
+        client.sendMessage(numberObi, message).then(response => {
           console.log('Se envio a Obi' + msg.body);
         }).catch(err => {
           console.log('No se envio a Obi');
         });
 
-        client.sendMessage(number, messageVCard).then(response => {
+        client.sendMessage(numberObi, messageVCard).then(response => {
           console.log('Se envio a Obi');
         }).catch(err => {
           console.log('No se envio a Obi');
@@ -112,18 +112,18 @@ client.on('message', msg => {
 
         console.log(msg);
 
-        number = phoneNumberFormatter('529992612798');  
-
-        client.sendMessage(number, message).then(response => {
+        const numberOz = phoneNumberFormatter('529992612798'); 
+        
+        client.sendMessage(numberOz, message).then(response => {
           console.log('Se envio a Oz');
         }).catch(err => {
           console.log('No se envio a Oz');
         });
 
-        client.sendMessage(number, messageVCard).then(response => {
-          console.log('Se envio a Obi');
+        client.sendMessage(numberOz, messageVCard).then(response => {
+          console.log('Se envio a Oz');
         }).catch(err => {
-          console.log('No se envio a Obi');
+          console.log('No se envio a Oz');
         });
 
         console.log(msg);
